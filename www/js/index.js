@@ -18,8 +18,10 @@
  */
 
 
-$().click(function () {
-    alert("aua");
+$(document).ready(function () {
+    $("checkbox").click(function () {
+        alert("Hello!");
+    });
 });
 
 
