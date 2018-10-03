@@ -44,3 +44,11 @@ var app = {
 };
 
 app.initialize();
+
+function windowH() {
+    var wH = $(window).height();
+
+    $('html, body').css({height: wH});
+}
+
+windowH();

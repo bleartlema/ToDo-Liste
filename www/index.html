@@ -46,8 +46,9 @@
     <h1 class="my-2">Meine Todo-Liste</h1>
 </nav>
 <div class="input-group container-fluid my-2">
-    <div class="input-group-prepend">
-        <div class="input-group-text">
+    <!-- Der ganze Div aktivert / deaktiviert die Checkbox, sobald man darauf klickt. -->
+    <div class="input-group-prepend" id="1" onclick="clickedy()">
+        <div class="input-group-text bg-light" id="back1">
             <input type="checkbox" id="check1" checked="checked">
         </div>
     </div>
@@ -55,22 +56,29 @@
 </div>
 
 <div class="input-group container-fluid my-2">
-    <div class="input-group-prepend">
+    <div class="input-group-prepend" id="2"
+         onclick="if (event.target.tagName != 'INPUT'){ document.getElementById('check' + this.id).checked = !document.getElementById('check' + this.id).checked;}">
         <div class="input-group-text">
-            <input type="checkbox">
+            <input type="checkbox" id="check2">
         </div>
     </div>
     <span class="form-control">Hausaufgaben erledigen</span>
 </div>
 
 <div class="input-group container-fluid my-2">
-    <div class="input-group-prepend">
+    <div class="input-group-prepend" id="3"
+         onclick="if (event.target.tagName != 'INPUT'){ document.getElementById('check' + this.id).checked = !document.getElementById('check' + this.id).checked;}">
         <div class="input-group-text">
-            <input type="checkbox">
+            <input type="checkbox" id="check3">
         </div>
     </div>
     <span class="form-control">Schlafen gehen</span>
 </div>
+<footer>
+    <div class="footerdivvy">
+        <input type="button" class="btn btn-light float-right">
+    </div>
+</footer>
 <!--<div class="app">
     <h1>Apache Cordova</h1>
     <div id="deviceready" class="blink">
@@ -89,5 +97,19 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/checkboxes.js">
+    $(function clickedy() {
+        if (event.target.tagName !== 'INPUT') {
+            document.getElementById('check' + this.id).checked = !document.getElementById('check' + this.id).checked
+        };
+        if (document.getElementById('back' + this.id).classList.contains('bg-light')) {
+            document.getElementById('back' + this.id).classList.remove('bg-light');
+            document.getElementById('back' + this.id).classList.add('bg-success');
+        } else {
+            document.getElementById('back' + this.id).classList.remove('bg-success');
+            document.getElementById('back' + this.id).classList.add('bg-light');
+        }
+    });
+</script>
 </body>
 </html>
