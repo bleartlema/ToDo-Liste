@@ -39,46 +39,83 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <title>Hello World</title>
+
+    <title>Neues ToDo</title>
 </head>
+
 <body>
+
 <nav class="container border-bottom">
     <h1 class="my-2">Neues ToDo</h1>
 </nav>
-<div class="input-group container-fluid my-2">
+
+<!--Input Feld für neues "To DO"-->
+
+<div class="container-fluid">
+    <h6 for="new_todo">TODO</h6>
     <div class="input-group-prepend">
-        <div class="input-group-text">
-            <input type="Text" id="neues_todo" placeholder="ToDo" >
+        <div class="input-group mb-3">
+
+            <input type="text" name="new_todo"  id="new_todo" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
+
+    </div>
+<!--Input Feld für die Beschreibung-->
+    <h6 for="new_beschreibung">Beschreibung</h6>
+
+</div>
+<div class="container-fluid ">
+    <div class="input-group-prepend">
+        <div class="input-group mb-3">
+
+            <input type="text" name="new_beschreibung" id="new_beschreibung"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
     </div>
 
 </div>
 
-<div class="input-group container-fluid my-2">
-    <div class="input-group-prepend">
-        <div class="input-group-text">
-            <input type="text" placeholder="Beschreibung">
-        </div>
-    </div>
+<!--Eingabefeld für das Datum, auf wann das neue To Do fällig ist-->
 
-</div>
-<div class="input-group container-fluid my-2">
+<div class="container-fluid ">
+    <h6 for="new_date">Datum</h6>
     <div class="input-group-prepend">
-        <div class="input-group-text">
-            <input type="date" >
+        <div class="input-group mb-3">
+            <input type="date" name="new_date" id="new_date" class="form-control"  aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
+
     </div>
 
 
-    <div class="input-group container-fluid my-2">
+    <!--Button um die Karte zu öffnen und Ort markieren, wo z.B. der Einkauf getätigt wird.-->
+    <div class="container-fluid ">
         <div class="input-group-prepend">
-            <div class="input-group-text">
-                <input type="submit" value="To do">
-                <br>
-                <input type="submit" value="Ort hinzufügen">
-            </div>
+            <div class="input-group mb-3">
+            <button type="button" class="btn btn-secondary btn-lg btn-block">Ort</button>
+            <br>
+
         </div>
+    </div>
+    </div>
+
+
+
+<!--Submit Button-->
+    <div class="container-fluid ">
+        <div class="input-group-prepend">
+                <input type="submit" class="btn btn-secondary btn-lg btn-block" value="To do">
+                <br>
+        </div>s
 </div>
+<br>
+    <br>
+
+
+
+
+
+
+
 <!--<div class="app">
     <h1>Apache Cordova</h1>
     <div id="deviceready" class="blink">
