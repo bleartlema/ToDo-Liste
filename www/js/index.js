@@ -16,9 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+
+$().click(function () {
+    alert("aua");
+});
+
+
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
@@ -26,12 +33,12 @@ var app = {
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         this.receivedEvent('deviceready');
     },
 
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -44,11 +51,3 @@ var app = {
 };
 
 app.initialize();
-
-function windowH() {
-    var wH = $(window).height();
-
-    $('html, body').css({height: wH});
-}
-
-windowH();
