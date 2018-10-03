@@ -34,7 +34,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">-->
-    <meta name="viewport" charset="x-UTF-16LE-BOM" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" charset="utf8" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="css/custom-checkboxes.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -55,20 +55,20 @@
     <h6 for="new_todo">TODO</h6>
     <div class="input-group-prepend">
         <div class="input-group mb-3">
-
-            <input type="text" name="new_todo"  id="new_todo" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" name="new_todo"  id="new_todo" class="form-control"  autocomplete="on" required="required"/>
+            <!--aria-label="Default" aria-describedby="inputGroup-sizing-default"-->
         </div>
 
     </div>
+
+
 <!--Input Feld für die Beschreibung-->
     <h6 for="new_beschreibung">Beschreibung</h6>
-
 </div>
 <div class="container-fluid ">
     <div class="input-group-prepend">
         <div class="input-group mb-3">
-
-            <input type="text" name="new_beschreibung" id="new_beschreibung"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" name="new_beschreibung" id="new_beschreibung"  class="form-control"  autocomplete="on" required="required">
         </div>
 
     </div>
@@ -81,7 +81,8 @@
     <h6 for="new_date">Datum</h6>
     <div class="input-group-prepend">
         <div class="input-group mb-3">
-            <input type="date" name="new_date" id="new_date" class="form-control"  aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
+            <input type="date" name="new_date" id="new_date" class="form-control"  required="required">
         </div>
 
     </div>
@@ -91,7 +92,7 @@
     <div class="container-fluid ">
         <div class="input-group-prepend">
             <div class="input-group mb-3">
-            <button type="button" class="btn btn-secondary btn-lg btn-block">Ort</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Ort</button>
             <br>
 
         </div>
@@ -101,28 +102,16 @@
 
 
 <!--Submit Button-->
+    <form action="/ToDo-Liste/www/index.html" method="post">
     <div class="container-fluid ">
         <div class="input-group-prepend">
-                <input type="submit" class="btn btn-secondary btn-lg btn-block" value="To do">
-                <br>
-        </div>s
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="To do" required="required">
+        </div>
 </div>
-<br>
-    <br>
+    </form>
 
 
 
-
-
-
-
-<!--<div class="app">
-    <h1>Apache Cordova</h1>
-    <div id="deviceready" class="blink">
-        <p class="event listening">Connecting to Device</p>
-        <p class="event received">Device is Ready</p>
-    </div>
-</div>-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
