@@ -18,9 +18,18 @@
  */
 
 $(document).ready(function () {
-    console.log("");
-    $("checkbox").click(function () {
-        alert("Hello!");
+    $(".big-checkbox").click(function () {
+        console.log("big-checkbox works");
+        $(this).children().toggleClass("bg-light");
+        $(this).children().toggleClass("bg-success");
+    });
+    $(".bg-box").click(function () {
+        console.log("click this");
+        var checkbox = $(":checkbox:eq(0)", this);
+        checkbox.attr("checked", !checkbox.attr("checked"));
+    });
+    $(".custom-checkbox").click(function () {
+        console.log("clicked checkbox !!!");
     });
 });
 

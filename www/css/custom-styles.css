@@ -1,6 +1,7 @@
 /* Normale Checkboxen ausblenden */
 
 .custom-checkbox {
+    display: none;
 }
 
 /* Runder Button rund machen */
