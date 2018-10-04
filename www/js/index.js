@@ -17,8 +17,8 @@
  * under the License.
  */
 
-
 $(document).ready(function () {
+    console.log("");
     $("checkbox").click(function () {
         alert("Hello!");
     });
