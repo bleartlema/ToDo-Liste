@@ -18,18 +18,36 @@
  */
 
 $(document).ready(function () {
+
+    // Klickt man auf die grosse Checkbox, wird sie grün (oder wieder weiss)
     $(".big-checkbox").click(function () {
         console.log("big-checkbox works");
         $(this).children().toggleClass("bg-light");
         $(this).children().toggleClass("bg-success");
     });
+
+    // Klickt man auf die grosse Checkbox, bekommt die unsichtbare einen Haken
     $(".bg-box").click(function () {
         console.log("click this");
-        var checkbox = $(":checkbox:eq(0)", this);
-        checkbox.attr("checked", !checkbox.attr("checked"));
+         var checkbox = $(this).children();
+         checkbox.prop("checked", !checkbox.prop("checked"));
     });
-    $(".custom-checkbox").click(function () {
-        console.log("clicked checkbox !!!");
+
+    // Bis zu 16 Checkboxen werden abgespeichert
+    $(".big-checkbox").click(function () {
+        // Sammle alle Checkbox-Inputs
+        var inputs = document.querySelectorAll('input[type="checkbox"]');
+        var arrData = [];
+        // Für jeden Input ...
+        inputs.forEach(function (input) {
+            // ... speichere die ID und den Status ab
+            arrData.push({id: input.id, checked: input.checked});
+        });
+        // In localStorage abspeichern
+        localStorage.setItem('inputs', JSON.stringify(arrData));
+        // 16
+        console.log(JSON.stringify(arrData));
+
     });
 });
 

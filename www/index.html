@@ -37,31 +37,23 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <meta name="viewport" charset="utf8" content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          content="user-scalable=no">
+    <meta name="viewport" charset="utf8"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/custom-styles.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Hello World</title>
 </head>
-<body>
+<body onload="load()">
 <nav class="container border-bottom">
     <h1 class="my-2">Meine Todo-Liste</h1>
 </nav>
+
+<!--Alle Aufträge-->
 <div class="input-group container-fluid my-2">
-    <!-- Der ganze Div aktivert / deaktiviert die Checkbox, sobald man darauf klickt. -->
-    <!-- Die Farbe des Div's wird beim Klick geändert -->
-    <div class="input-group-prepend" id="1" onclick=" if (event.target.tagName !== 'INPUT') {
-        document.getElementById('check' + this.id).checked = !document.getElementById('check' + this.id).checked};
-    if (document.getElementById('back' + this.id).classList.contains('bg-light')) {
-        document.getElementById('back' + this.id).classList.remove('bg-light');
-        document.getElementById('back' + this.id).classList.add('bg-success');
-    } else {
-        document.getElementById('back' + this.id).classList.remove('bg-success');
-        document.getElementById('back' + this.id).classList.add('bg-light');
-    }">
-        <div class="input-group-text bg-light" id="back1">
-            <input type="checkbox" class="custom-checkbox" id="check1">
+    <div class="input-group-prepend big-checkbox">
+        <div class="input-group-text bg-box bg-light">
+            <input type="checkbox" class="custom-checkbox" id="c1">
         </div>
     </div>
     <span class="form-control">Paket abholen</span>
@@ -70,7 +62,7 @@
 <div class="input-group container-fluid my-2">
     <div class="input-group-prepend big-checkbox">
         <div class="input-group-text bg-box bg-light">
-            <input type="checkbox" class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox" id="c2">
         </div>
     </div>
     <span class="form-control">Hausaufgaben erledigen</span>
@@ -79,11 +71,13 @@
 <div class="input-group container-fluid my-2">
     <div class="input-group-prepend big-checkbox">
         <div class="input-group-text bg-box bg-light">
-            <input type="checkbox" class="custom-checkbox">
+            <input type="checkbox" class="custom-checkbox" id="c3">
         </div>
     </div>
     <span class="form-control">Schlafen gehen</span>
 </div>
+
+<!--Neuer Auftrag-->
 <footer>
     <div class="container-fluid">
         <a href="vorlage.html">
@@ -92,25 +86,27 @@
     </div>
 </footer>
 
-<div class="app">
-    <h1>Apache Cordova</h1>
-    <div id="deviceready" class="blink">
-        <p class="event listening">Connecting to Device</p>
-        <p class="event received">Device is Ready</p>
-    </div>
-</div>
+<!--Checkboxen laden-->
+<script>
 
+    function load() {
+        var inputs = JSON.parse(localStorage.getItem('inputs'));
+        // For each inputs...
+        inputs.forEach(function (input) {
+            // Set the 'checked' value
+            document.getElementById(input.id).checked = input.checked;
+            if (input.checked) {
+                $("#" + input.id).parent().removeClass("bg-light")
+                $("#" + input.id).parent().addClass("bg-success")
+            }
+        });
+    }
+
+</script>
 <script src="js/jquery-3.3.1.slim.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
-
-<!--Google Key für die Map-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbYuPDqHpJmkThcZ21kqMOwsJNGMSnASY"></script>
 <script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/googlemap.js"></script>
-
-
 </body>
-
 </html>
