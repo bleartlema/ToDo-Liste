@@ -28,15 +28,15 @@
         * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
             * Enable inline JS: add 'unsafe-inline' to default-src
     -->
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'unsafe-inline' 'self'
-          data: gap: https://ssl.gstatic.com 'unsafe-eval';
-          style-src 'unsafe-inline' 'self'; media-src *;
-          img-src 'self' data: content:;">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <!--    <meta http-equiv="Content-Security-Policy"
+              content="default-src 'unsafe-inline' 'self'
+              data: gap: https://ssl.gstatic.com 'unsafe-eval';
+              style-src 'unsafe-inline' 'self'; media-src *;
+              img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport"
+              content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">-->
     <meta name="viewport" charset="utf8"
           content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/custom-styles.css">
@@ -44,6 +44,8 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Hello World</title>
 </head>
+
+<!--Vorhandene Daten laden-->
 <body onload="load()">
 <nav class="container border-bottom">
     <h1 class="my-2">Meine Todo-Liste</h1>
@@ -77,7 +79,7 @@
     <span class="form-control">Schlafen gehen</span>
 </div>
 
-<!--Neuer Auftrag-->
+<!--Neuer Auftrag erstellen-->
 <footer>
     <div class="container-fluid">
         <a href="vorlage.html">
@@ -86,7 +88,7 @@
     </div>
 </footer>
 
-<!--Checkboxen laden-->
+<!--Checkboxes laden aus localStorage-->
 <script>
 
     function load() {

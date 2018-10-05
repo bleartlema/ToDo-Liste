@@ -26,14 +26,14 @@ $(document).ready(function () {
         $(this).children().toggleClass("bg-success");
     });
 
-    // Klickt man auf die grosse Checkbox, bekommt die unsichtbare einen Haken
+    // Klickt man auf die grosse Checkbox, wird die unsichtbare Checkbox ein- oder ausgeschaltet
     $(".bg-box").click(function () {
         console.log("click this");
-         var checkbox = $(this).children();
-         checkbox.prop("checked", !checkbox.prop("checked"));
+        var checkbox = $(this).children();
+        checkbox.prop("checked", !checkbox.prop("checked"));
     });
 
-    // Bis zu 16 Checkboxen werden abgespeichert
+    // Checkboxes werden abgespeichert
     $(".big-checkbox").click(function () {
         // Sammle alle Checkbox-Inputs
         var inputs = document.querySelectorAll('input[type="checkbox"]');
@@ -45,13 +45,14 @@ $(document).ready(function () {
         });
         // In localStorage abspeichern
         localStorage.setItem('inputs', JSON.stringify(arrData));
-        // 16
+        // Array in Konsole ausgeben
         console.log(JSON.stringify(arrData));
 
     });
 });
 
 
+// Von Cordova generiert
 var app = {
     // Application Constructor
     initialize: function () {
