@@ -1,14 +1,14 @@
-/* Normale Checkboxen ausblenden */
-
+/* Kleine Checkboxen ausblenden */
 .custom-checkbox {
     display: none;
 }
 
 /* Runder Button rund machen */
-
 .custom-button {
+    /* Einheitliche Grösse setzen */
     width: 50px;
     height: 50px;
+    /* Alle möglichen anderen Angaben überschreiben -> !important */
     -webkit-border-radius: 25px !important;
     -moz-border-radius: 25px !important;
     border-radius: 25px !important;

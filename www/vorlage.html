@@ -41,31 +41,26 @@
 
     <title>Neues ToDo</title>
 </head>
-
 <body>
 
+<!--Titel der Seite-->
 <nav class="container border-bottom">
     <h1 class="my-2">Neues ToDo</h1>
 </nav>
 
-<!--Input Feld für neues "To DO"-->
-
-<!--Action festgeleft für Submit Button-->
-<form action="/ToDo-Liste/www/index.html" method="post">
-
+<!--Action festgelegt für Submit Button-->
+<form action="index.html" method="get">
+    <!--Obligatorisches Titelfeld-->
     <div class="container-fluid">
         <h6 for="new_todo">TODO</h6>
         <div class="input-group-prepend">
             <div class="input-group mb-3">
                 <input type="text" name="new_todo" id="new_todo" class="form-control" autocomplete="on"
                        required="required"/>
-
             </div>
-
         </div>
 
-
-        <!--Input Feld für die Beschreibung-->
+        <!--Obligatorisches Input Feld für die Beschreibung-->
         <h6 for="new_beschreibung">Beschreibung</h6>
     </div>
     <div class="container-fluid ">
@@ -74,20 +69,16 @@
                 <input type="text" name="new_beschreibung" id="new_beschreibung" class="form-control" autocomplete="on"
                        required="required">
             </div>
-
         </div>
-
     </div>
 
     <!--Eingabefeld für das Datum, auf wann das neue To Do fällig ist-->
-
     <div class="container-fluid ">
         <h6 for="new_date">Datum</h6>
         <div class="input-group-prepend">
             <div class="input-group mb-3">
                 <input type="date" name="new_date" id="new_date" class="form-control" required="required">
             </div>
-
         </div>
 
         <!--Button um die Karte zu öffnen und Ort markieren, wo z.B. der Einkauf getätigt wird.-->
@@ -96,13 +87,10 @@
             <div class="input-group-prepend">
                 <div class="input-group mb-3">
                     <button onclick="initMap()" type="button" class="btn btn-primary btn-lg btn-block">Ort</button>
-
                     <br>
-
                 </div>
             </div>
         </div>
-
 
         <!--Submit Button-->
         <div class="container-fluid ">
@@ -113,7 +101,7 @@
     </div>
 </form>
 
-<!--Map Anzeigen-->
+<!--Map Anzeigen und Grösse setzen-->
 <br>
 <div id="map" style="width:100%;height: 600px;"></div>
 
@@ -125,7 +113,7 @@
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/googlemap.js"></script>
 
-<!--Google Key für die Map-->
+<!--Google API Key für die Map-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbYuPDqHpJmkThcZ21kqMOwsJNGMSnASY"></script>
 </body>
 </html>

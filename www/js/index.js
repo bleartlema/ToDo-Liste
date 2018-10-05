@@ -17,19 +17,21 @@
  * under the License.
  */
 
+// Auf DOM warten
 $(document).ready(function () {
 
     // Klickt man auf die grosse Checkbox, wird sie grün (oder wieder weiss)
     $(".big-checkbox").click(function () {
-        console.log("big-checkbox works");
+        // Bootstrap-Klasse it farbigem Hintergrund setzen
         $(this).children().toggleClass("bg-light");
         $(this).children().toggleClass("bg-success");
     });
 
     // Klickt man auf die grosse Checkbox, wird die unsichtbare Checkbox ein- oder ausgeschaltet
     $(".bg-box").click(function () {
-        console.log("click this");
+        // Child-Element ist die kleine Checkbox
         var checkbox = $(this).children();
+        // Zustand ungleich dem vorherigen Zustand setzen
         checkbox.prop("checked", !checkbox.prop("checked"));
     });
 
@@ -37,17 +39,18 @@ $(document).ready(function () {
     $(".big-checkbox").click(function () {
         // Sammle alle Checkbox-Inputs
         var inputs = document.querySelectorAll('input[type="checkbox"]');
+        // Array erstellen
         var arrData = [];
         // Für jeden Input ...
         inputs.forEach(function (input) {
             // ... speichere die ID und den Status ab
-            arrData.push({id: input.id, checked: input.checked});
+            arrData.push({
+                id: input.id,
+                checked: input.checked
+            });
         });
         // In localStorage abspeichern
         localStorage.setItem('inputs', JSON.stringify(arrData));
-        // Array in Konsole ausgeben
-        console.log(JSON.stringify(arrData));
-
     });
 });
 
